@@ -8,11 +8,11 @@ KeenKeeper is a high-fidelity, production-ready personal relationship tracking a
 
 ##  Key Features
 
-*   ** Live Interaction Analytics Panel**
+*   **Live Interaction Analytics Panel**
     Tracks relationship telemetry in real-time. Automatically parses dataset schemas to compute counts across four functional states: *Total Friends*, *On Track*, *Due Soon*, and *Overdue*.
-*   ** Parameterized Detail Workspaces & Stateful Check-Ins**
+*   **Parameterized Detail Workspaces & Stateful Check-Ins**
     Features independent parameterized workspaces (`/friend/:id`) loaded via custom context routers. Includes responsive communication triggers (`Call`, `Text`, `Video`) that dynamically write to global application history and fire clean feedback alerts.
-*   ** Dynamic Chronological Timeline Filters**
+*   **Dynamic Chronological Timeline Filters**
     Consolidates logged contact events in a central hub. Features asynchronous selector filtration pipelines to isolate interaction histories seamlessly by specific communication types.
 
 ---
@@ -33,7 +33,7 @@ KeenKeeper is a high-fidelity, production-ready personal relationship tracking a
 
 ##  Installation & Local Setup
 
-Get your local development workspace cloned, bundled, and operational under two minutes by executing these sequential command strings inside your shell repository:
+Get local development workspace cloned, bundled, and operational under two minutes by executing these sequential command strings inside your shell repository:
 
 1. **Clone the project repository:**
    ```bash
