@@ -75,60 +75,61 @@ const Homepage = () => {
                 <h3 className="text-lg font-bold text-base-content tracking-wide">Your Friends</h3>
             </div>
 
-           
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
-                {friends.map((friend) => (
-    <Link 
-        to={`/friend/${friend.id}`} // এটি প্রতিটি ফ্রেন্ডের নিজস্ব আইডিতে নিয়ে যাবে
-        key={friend.id} 
-        className="bg-base-100 p-6 rounded-2xl border border-base-200 text-center flex flex-col items-center shadow-xs transition-all duration-200 hover:shadow-md cursor-pointer group"
-    >
-                        {/* Status Ring Avatar Layout */}
-                        <div className="avatar mb-4">
-                            <div className={`w-20 h-20 rounded-full ring-3 ring-offset-base-100 ring-offset-2 ${
-                                friend.status === 'on_track' ? 'ring-emerald-500' :
-                                friend.status === 'due_soon' ? 'ring-amber-500' : 'ring-rose-500'
-                            }`}>
-                                <img src={friend.picture} alt={friend.name} />
-                            </div>
-                        </div>
-
-                        
-        <h4 className="font-bold text-base text-base-content group-hover:text-[#1b4332] transition-colors">
-            {friend.name}
-        </h4>
-                        <p className="text-xs text-base-content/50 mt-1">
-                            Contact: <span className="font-semibold">{friend.days_since_contact}d ago</span>
-                        </p>
-                        
-                        
-                        <div className="mt-4 flex flex-wrap justify-center gap-1.5 w-full">
-                          
-                            <span className={`badge badge-sm font-bold border-none px-2.5 py-1 text-[10px] tracking-wide rounded-md ${
-                                friend.status === 'on_track' ? 'bg-emerald-100 text-emerald-800' :
-                                friend.status === 'due_soon' ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'
-                            }`}>
-                                {friend.status.replace('_', ' ').toUpperCase()}
-                            </span>
-
-                           
-                            {friend.tags.map((tag, index) => (
-                                <span 
-                                    key={index} 
-                                    className="badge badge-sm bg-base-200 text-base-content/70 border-none font-medium px-2 py-1 text-[10px] uppercase rounded-md"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-
-                        <p className="text-xs text-base-content/60 mt-4 line-clamp-2 italic px-1">
-                            "{friend.bio}"
-                        </p>
-                    </Link>
-))}
-                
+           {/* ডাইনামিক প্রোফাইল কার্ড রেসপনসিভ গ্রিড */}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+    {friends.map((friend) => (
+        <Link 
+            to={`/friend/${friend.id}`} 
+            key={friend.id} 
+            className="bg-base-100 p-6 rounded-2xl border border-base-200 text-center flex flex-col items-center shadow-xs transition-all duration-200 hover:shadow-md cursor-pointer block group"
+        >
+            {/* ১. স্ট্যাটাস রিং অ্যাভাটার (ছবিতে ক্লিক করলে কাজ করবে) */}
+            <div className="avatar mb-4">
+                <div className={`w-20 h-20 rounded-full ring-3 ring-offset-base-100 ring-offset-2 ${
+                    friend.status === 'on_track' ? 'ring-emerald-500' :
+                    friend.status === 'due_soon' ? 'ring-amber-500' : 'ring-rose-500'
+                }`}>
+                    <img src={friend.picture} alt={friend.name} className="pointer-events-none" />
+                </div>
             </div>
+
+            {/* ২. ফ্রেন্ড নেম টাইটেল */}
+            <h4 className="font-bold text-base text-base-content leading-tight group-hover:text-[#1b4332] transition-colors">
+                {friend.name}
+            </h4>
+            
+            {/* ৩. কন্টাক্ট ডেট */}
+            <p className="text-xs text-base-content/50 mt-1">
+                Contact: <span className="font-semibold">{friend.days_since_contact}d ago</span>
+            </p>
+            
+            {/* ৪. স্ট্যাটাস এবং কাস্টম ট্যাগ ব্যাজেস */}
+            <div className="mt-4 flex flex-wrap justify-center gap-1.5 w-full">
+                <span className={`badge badge-sm font-bold border-none px-2.5 py-1 text-[10px] tracking-wide rounded-md ${
+                    friend.status === 'on_track' ? 'bg-emerald-100 text-emerald-800' :
+                    friend.status === 'due_soon' ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'
+                }`}>
+                    {friend.status.replace('_', ' ').toUpperCase()}
+                </span>
+
+                {friend.tags.map((tag, index) => (
+                    <span 
+                        key={index} 
+                        className="badge badge-sm bg-base-200 text-base-content/70 border-none font-medium px-2 py-1 text-[10px] uppercase rounded-md"
+                    >
+                        {tag}
+                    </span>
+                ))}
+            </div>
+
+            {/* ৫. মিনি বায়ো */}
+            <p className="text-xs text-base-content/60 mt-4 line-clamp-2 italic px-1">
+                "{friend.bio}"
+            </p>
+        </Link>
+    ))}
+</div>
+
         </div>
     );
 };

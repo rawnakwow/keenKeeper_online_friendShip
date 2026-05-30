@@ -1,23 +1,23 @@
 #  KeenKeeper
 
-> Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
+> **🔗 Live Link:** [https://keenkeeper-onlien-friends.netlify.app]
 
 KeenKeeper is a high-fidelity, production-ready personal relationship tracking application built to manage real-life connections systematically. Developed precisely to professional design layouts using fluid responsive grids, semantic state tokening, and dynamic live data synchronization.
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-*   **📊 Live Interaction Analytics Panel**
+*   ** Live Interaction Analytics Panel**
     Tracks relationship telemetry in real-time. Automatically parses dataset schemas to compute counts across four functional states: *Total Friends*, *On Track*, *Due Soon*, and *Overdue*.
-*   **⚡ Parameterized Detail Workspaces & Stateful Check-Ins**
+*   ** Parameterized Detail Workspaces & Stateful Check-Ins**
     Features independent parameterized workspaces (`/friend/:id`) loaded via custom context routers. Includes responsive communication triggers (`Call`, `Text`, `Video`) that dynamically write to global application history and fire clean feedback alerts.
-*   **📜 Dynamic Chronological Timeline Filters**
+*   ** Dynamic Chronological Timeline Filters**
     Consolidates logged contact events in a central hub. Features asynchronous selector filtration pipelines to isolate interaction histories seamlessly by specific communication types.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 
 | Technology | Purpose |
@@ -31,13 +31,13 @@ KeenKeeper is a high-fidelity, production-ready personal relationship tracking a
 
 ---
 
-## 🔧 Installation & Local Setup
+##  Installation & Local Setup
 
 Get your local development workspace cloned, bundled, and operational under two minutes by executing these sequential command strings inside your shell repository:
 
 1. **Clone the project repository:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/rawnakwow/keenKeeper_online_friendShip.git
    ```
 
 2. **Step inside the absolute root directory:**
@@ -54,8 +54,6 @@ Get your local development workspace cloned, bundled, and operational under two 
    ```bash
    npm run dev
    ```
-
-*Open your preferred browser instance and navigate toward the terminal's active endpoint port (typically `http://localhost:5173`) to view KeenKeeper.*
 
 ---
 

@@ -51,19 +51,19 @@ const Navber = () => {
                     </Link>
 
                     {/* Stats ট্যাব */}
-                    <Link 
-                        to="/stats" 
-                        className={`btn btn-sm gap-2 rounded-lg px-4 normal-case font-medium transition-all ${
-                            currentPath === "/stats" 
-                            ? "bg-[#1b4332] text-white hover:bg-[#143225] border-none shadow-xs" 
-                            : "btn-ghost text-base-content/60 hover:text-base-content hover:bg-base-200"
-                        }`}
-                    >
-                        <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v5.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0 1 3 18.375v-5.25ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-9.75ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v14.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                        </svg>
-                        Stats
-                    </Link>
+                   <Link 
+    to="/stats" // <-- নিশ্চিত করুন এখানে '/stats' বানানটি সঠিক আছে (sats নয়)
+    className={`btn btn-sm gap-2 rounded-lg px-4 normal-case font-medium transition-all ${
+        currentPath === "/stats" 
+        ? "bg-[#1b4332] text-white hover:bg-[#143225] border-none shadow-xs" 
+        : "btn-ghost text-base-content/60 hover:text-base-content hover:bg-base-200"
+    }`}
+>
+    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v5.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0 1 3 18.375v-5.25ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-9.75ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v14.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+    </svg>
+    Stats
+</Link>
                 </div>
             </div>
 
@@ -76,10 +76,10 @@ const Navber = () => {
                         </svg>
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-xl z-50 mt-3 w-40 p-2 shadow-lg border border-base-200">
-                        <li><Link to="/" className={currentPath === "/" ? "bg-[#1b4332] text-white" : ""}>Home</Link></li>
-                        <li><Link to="/timeline" className={currentPath === "/timeline" ? "bg-[#1b4332] text-white" : ""}>Timeline</Link></li>
-                        <li><Link to="/stats" className={currentPath === "/stats" ? "bg-[#1b4332] text-white" : ""}>Stats</Link></li>
-                    </ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/timeline">Timeline</Link></li>
+    <li><Link to="/stats" className={currentPath === "/stats" ? "bg-[#1b4332] text-white" : ""}>Stats</Link></li>
+</ul>
                 </div>
             </div>
         </div>
