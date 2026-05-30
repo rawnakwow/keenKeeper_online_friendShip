@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
     const [friends, setFriends] = useState([]);
@@ -77,10 +78,11 @@ const Homepage = () => {
            
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
                 {friends.map((friend) => (
-                    <div 
-                        key={friend.id} 
-                        className="bg-base-100 p-6 rounded-2xl border border-base-200 text-center flex flex-col items-center shadow-xs transition-all duration-200 hover:shadow-md"
-                    >
+    <Link 
+        to={`/friend/${friend.id}`} // এটি প্রতিটি ফ্রেন্ডের নিজস্ব আইডিতে নিয়ে যাবে
+        key={friend.id} 
+        className="bg-base-100 p-6 rounded-2xl border border-base-200 text-center flex flex-col items-center shadow-xs transition-all duration-200 hover:shadow-md cursor-pointer group"
+    >
                         {/* Status Ring Avatar Layout */}
                         <div className="avatar mb-4">
                             <div className={`w-20 h-20 rounded-full ring-3 ring-offset-base-100 ring-offset-2 ${
@@ -92,9 +94,9 @@ const Homepage = () => {
                         </div>
 
                         
-                        <h4 className="font-bold text-base text-base-content leading-tight">
-                            {friend.name}
-                        </h4>
+        <h4 className="font-bold text-base text-base-content group-hover:text-[#1b4332] transition-colors">
+            {friend.name}
+        </h4>
                         <p className="text-xs text-base-content/50 mt-1">
                             Contact: <span className="font-semibold">{friend.days_since_contact}d ago</span>
                         </p>
@@ -123,8 +125,9 @@ const Homepage = () => {
                         <p className="text-xs text-base-content/60 mt-4 line-clamp-2 italic px-1">
                             "{friend.bio}"
                         </p>
-                    </div>
-                ))}
+                    </Link>
+))}
+                
             </div>
         </div>
     );
