@@ -6,7 +6,7 @@ const Navber = () => {
             
             <div className="navbar-start">
                 <a href="/" className="text-xl font-bold tracking-tight text-base-content hover:opacity-80 transition-opacity">
-                    KeenKeeper
+                   Keen<span className="text-[#1b4332]">Keeper</span>
                 </a>
             </div>
 
