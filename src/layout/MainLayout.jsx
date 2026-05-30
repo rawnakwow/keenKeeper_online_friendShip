@@ -1,27 +1,20 @@
-import React from 'react';
+import { Outlet } from "react-router-dom";
 import Navber from "../components/shared/navber/Navber";
-import { Outlet } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from "../components/shared/navber/Footer";
+
 const MainLayout = () => {
     return (
-        <div>
+        <div className="min-h-screen flex flex-col bg-base-100">
+          
+            <Navber />
             
-
-
-
-            <Navber/>
-            <h2>Main Content</h2>
-            <Outlet/>
-            <Footer/>
-
-
-
-
-
-
-
-
-
+            
+            <main className="flex-grow">
+                <Outlet />
+            </main>
+            
+            
+            <Footer />
         </div>
     );
 };
