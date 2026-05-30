@@ -40,6 +40,7 @@ const Footer = () => {
                 </div>
                 
                 
+                
                 <div className="w-full border-t border-emerald-800/60 pt-6 mt-2">
                     
                     
