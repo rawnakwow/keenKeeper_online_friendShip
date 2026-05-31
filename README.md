@@ -1,4 +1,4 @@
-#  KeenKeeper
+#  KeenKeeper — Keep Your Friendships Alive
 
 > **🔗 Live Link:** [https://keenkeeper-onlien-friends.netlify.app]
 
